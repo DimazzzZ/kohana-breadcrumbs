@@ -1,16 +1,16 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Xvp_Breadcrumbs
+class Kohana_Breadcrumbs
 {
     /**
      * Default view 
      * @var string
      */
-    protected $view = 'breadcrumbs/default';
+    protected $view = 'Breadcrumbs/Default';
     
     /**
      * Singleton instance
-     * @var Xvp_Breadcrumbs
+     * @var Kohana_Breadcrumbs
      */
     protected static $instance;
     
@@ -22,18 +22,18 @@ class Xvp_Breadcrumbs
     
     /**
      * Constructor
-     * @return Xvp_Breadcrumbs
+     * @return Kohana_Breadcrumbs
      */
     private function __construct() {}
     
     /**
      * Get the unique instance
-     * @return Xvp_Breadcrumbs
+     * @return Kohana_Breadcrumbs
      */
-    public static function getInstance()
+    public static function instance()
     {
         if(self::$instance === null) {
-            self::$instance = new Xvp_Breadcrumbs;
+            self::$instance = new self;
         }
         return self::$instance;
     }
